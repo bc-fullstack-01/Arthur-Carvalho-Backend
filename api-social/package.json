@@ -1,0 +1,37 @@
+{
+  "name": "api-social",
+  "version": "1.0.0",
+  "description": "An API for a social media",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon -V --exitcrash .",
+    "mongo:seed": "node seed.js",
+    "mongo:start": "docker run --name mongodb -d -p 27017:27017 mongo:latest",
+    "mongo:rm": "docker rm -f mongodb",
+    "mongo:rs": "npm run mongo:rm && npm run mongo:start && npm run mongo:seed"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.131.0",
+    "amqplib": "^0.10.1",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-swagger-generator": "^1.1.17",
+    "helmet": "^5.1.0",
+    "http-errors": "^2.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.4.5",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "rascal": "^14.4.5",
+    "socket.io": "^4.5.1",
+    "swagger-ui-express": "^4.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
